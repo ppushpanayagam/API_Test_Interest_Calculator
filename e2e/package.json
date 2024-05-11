@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --ext .ts",
     "test": "npx playwright test --reporter=html",
-    "cucumber": "cucumber-js src/features/**/*.feature --require-module ts-node/register --require src/step-definitions/**/**/*.ts"
+    "transpile": "rimraf dist && babel --extensions .ts --out-dir dist src",
+    "precucumber": "rimraf reports && mkdir reports && echo {} > reports/report.json",
+    "cucumber": "npm run transpile && cucumber-js"
   },
   "keywords": [],
   "author": "Pushparaj Pushpanayagam",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.24.5",
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-typescript": "^7.24.1",
     "@cucumber/cucumber": "^10.6.0",
     "@playwright/test": "^1.44.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^8.57.0",
     "playwright": "^1.44.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
