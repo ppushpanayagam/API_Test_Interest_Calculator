@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright test --reporter=html"
   },
   "keywords": [],
   "author": "Pushparaj Pushpanayagam",
   "license": "ISC",
   "dependencies": {
-    "@playwright/test": "^1.44.0"
+    "@cucumber/cucumber": "^10.6.0",
+    "@playwright/test": "^1.44.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }
