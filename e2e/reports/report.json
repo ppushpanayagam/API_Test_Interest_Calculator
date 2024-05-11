@@ -1,0 +1,76 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "as-an-api-i-can-retrive-all-the-details;as-an-api-i-can-get-all-the-details",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "As an API I can GET all the details",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 67290792
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I get the \"interestCalculator\"",
+            "match": {
+              "location": "src/step-definitions/get-step.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 103146375
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "the response was successful",
+            "match": {
+              "location": "src/step-definitions/assertions/response-steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3077792
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "the response status code is 200",
+            "match": {
+              "location": "src/step-definitions/assertions/response-steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1105249
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@dev",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "as-an-api-i-can-retrive-all-the-details",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "As an API I can retrive all the details",
+    "tags": [],
+    "uri": "src/features/GET.feature"
+  }
+]
