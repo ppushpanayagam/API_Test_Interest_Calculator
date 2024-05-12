@@ -1,5 +1,6 @@
 import { Given } from "@cucumber/cucumber";
 import { ScenarioWorld } from "./setup/world";
+import { getResponse } from "../support/rest-helper";
 
 Given(
     /^I get the "([^"]*)"$/,
@@ -7,14 +8,15 @@ Given(
 
         const{
             api: {request},
-            globalAPIResponseVariables
+            globalAPIResponseVariables,
+            globalConfig
         }=this
         
-        const response = await request.get("http://localhost:8080/interest/calculate?amount=1000&interestRate=5&duration=3&accrualType=COMPOUND")
-
-        globalAPIResponseVariables.response = response
+        const endPoint = "interest/calculate?amount=1000&interestRate=5&duration=3&accrualType=COMPOUND"
         
-        console.log(await response.text())
+        await getResponse (request, endPoint, globalConfig, globalAPIResponseVariables)
+        
+        console.log(await globalAPIResponseVariables.response.text())
 
     }
 ) 
