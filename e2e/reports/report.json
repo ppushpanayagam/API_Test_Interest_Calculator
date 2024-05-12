@@ -4,56 +4,145 @@
     "elements": [
       {
         "description": "",
-        "id": "as-an-api-i-can-retrive-all-the-details;as-an-api-i-can-get-all-the-details",
-        "keyword": "Scenario",
-        "line": 4,
-        "name": "As an API I can GET all the details",
+        "id": "interest-calculator;successfully-calculate-interest-with-valid-data",
+        "keyword": "Scenario Outline",
+        "line": 11,
+        "name": "Successfully calculate interest with valid data",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 162246832
+              "duration": 57859333
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 5,
-            "name": "I get the \"interestCalculator\"",
+            "name": "I set \"1000\" \"5\" \"3\" to calculate \"SIMPLE\" interest",
             "match": {
-              "location": "src/step-definitions/get-step.ts:5"
+              "location": "src/step-definitions/get-step.ts:7"
             },
             "result": {
               "status": "passed",
-              "duration": 233656125
+              "duration": 902249
             }
           },
           {
             "arguments": [],
-            "keyword": "And ",
+            "keyword": "When ",
             "line": 6,
-            "name": "the response was successful",
+            "name": "I GET the api to calculate interest for \"SIMPLE\"",
             "match": {
-              "location": "src/step-definitions/assertions/response-steps.ts:5"
+              "location": "src/step-definitions/get-step.ts:16"
             },
             "result": {
               "status": "passed",
-              "duration": 2646209
+              "duration": 141618375
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 7,
-            "name": "the response status code is 200",
+            "name": "the response was successful",
+            "match": {
+              "location": "src/step-definitions/assertions/response-steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2156416
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the response status code should be 200",
             "match": {
               "location": "src/step-definitions/assertions/response-steps.ts:25"
             },
             "result": {
               "status": "passed",
-              "duration": 848374
+              "duration": 469458
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@dev",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "interest-calculator;successfully-calculate-interest-with-valid-data",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Successfully calculate interest with valid data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4511792
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I set \"1000\" \"5\" \"3\" to calculate \"COMPOUND\" interest",
+            "match": {
+              "location": "src/step-definitions/get-step.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 565667
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I GET the api to calculate interest for \"COMPOUND\"",
+            "match": {
+              "location": "src/step-definitions/get-step.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12825500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "the response was successful",
+            "match": {
+              "location": "src/step-definitions/assertions/response-steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 850084
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the response status code should be 200",
+            "match": {
+              "location": "src/step-definitions/assertions/response-steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 339249
             }
           }
         ],
@@ -66,10 +155,10 @@
         "type": "scenario"
       }
     ],
-    "id": "as-an-api-i-can-retrive-all-the-details",
+    "id": "interest-calculator",
     "line": 1,
     "keyword": "Feature",
-    "name": "As an API I can retrive all the details",
+    "name": "Interest Calculator",
     "tags": [],
     "uri": "src/features/GET.feature"
   }

@@ -1,7 +1,12 @@
-Feature: As an API I can retrive all the details
+Feature: Interest Calculator
 
   @dev
-  Scenario: As an API I can GET all the details
-    Given I get the "interestCalculator"
-    And the response was successful
-    Then the response status code is 200
+  Scenario Outline: Successfully calculate interest with valid data
+    Given I set "<amount>" "<interest>" "<duration>" to calculate "<accrualType>" interest
+    When I GET the api to calculate interest for "<accrualType>"
+    Then the response was successful
+    And the response status code should be 200
+    Examples:
+        | amount  | interest | duration | accrualType |
+        | 1000    | 5        | 3        | SIMPLE      |
+        | 1000    | 5        | 3        | COMPOUND    |
