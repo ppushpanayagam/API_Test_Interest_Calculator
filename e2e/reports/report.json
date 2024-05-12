@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 81294750
+              "duration": 162246832
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 54718250
+              "duration": 233656125
             }
           },
           {
@@ -40,21 +40,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6603833
+              "duration": 2646209
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 7,
-            "name": "the response status code is 201",
+            "name": "the response status code is 200",
             "match": {
               "location": "src/step-definitions/assertions/response-steps.ts:25"
             },
             "result": {
-              "status": "failed",
-              "duration": 4217750,
-              "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at Proxy.<anonymous> (/Users/pushparajpushpanayagam/API_Test_Interest_Calculator/e2e/node_modules/playwright/lib/matchers/expect.js:177:37)\n    at ScenarioWorld.<anonymous> (/Users/pushparajpushpanayagam/API_Test_Interest_Calculator/e2e/src/step-definitions/assertions/response-steps.ts:34:35)\n    at /Users/pushparajpushpanayagam/API_Test_Interest_Calculator/e2e/src/step-definitions/assertions/response-steps.ts:8:71\n    at __awaiter (/Users/pushparajpushpanayagam/API_Test_Interest_Calculator/e2e/src/step-definitions/assertions/response-steps.ts:4:12)\n    at ScenarioWorld.<anonymous> (/Users/pushparajpushpanayagam/API_Test_Interest_Calculator/e2e/src/step-definitions/assertions/response-steps.ts:28:12)"
+              "status": "passed",
+              "duration": 848374
             }
           }
         ],
