@@ -1,15 +1,22 @@
 import { Given } from "@cucumber/cucumber";
 import { ScenarioWorld } from "./setup/world";
-import { getResponse } from "../support/rest-helper";
+import { getResponseWithQueryParams } from "../support/rest-helper";
 import {getInterestCalculatorEndPoint} from "../utils/supportMethods"
+import endPointPath from "../../config/enpoints.json";
+declare var global: {
+    [key: string]: any;
+};
+
 
 
 Given(
     /^I set "([^"]*)" "([^"]*)" "([^"]*)" to calculate "([^"]*)" interest$/,
     async function(principal: Number, interest:Number, duration: Number, accrualType: string) {
 
-        var endPoint = getInterestCalculatorEndPoint(principal, interest, duration, accrualType)
-        console.log(endPoint)
+        global.amount = principal;
+        global.interest = interest;
+        global.duration = duration;
+        global.accrualType = accrualType;
     }
 ) 
 
@@ -23,9 +30,7 @@ Given(
             globalConfig
         }=this
     
-        await getResponse (request, getInterestCalculatorEndPoint(1000, 5, 3, route), globalConfig, globalAPIResponseVariables)
+        await getResponseWithQueryParams (request, endPointPath.interestCalculation, global.amount, global.interest, global.duration, global.accrualType, globalConfig, globalAPIResponseVariables)
         
-        console.log(await globalAPIResponseVariables.response.text())
-
     }
 ) 

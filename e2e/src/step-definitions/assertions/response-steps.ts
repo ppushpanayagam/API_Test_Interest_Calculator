@@ -3,7 +3,7 @@ import { ScenarioWorld } from "../setup/world";
 import { expect } from "@playwright/test"
 
 Then(
-    /^the response was (successful)?(unsuccesful)?$/,
+    /^the response was (successful)?(unsuccessful)?$/,
     async function(this: ScenarioWorld, success: boolean, unsuccessful: boolean) {
         const {
             globalAPIResponseVariables
