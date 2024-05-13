@@ -2,7 +2,7 @@
 
 OVERVIEW ABOUT THE AUTOMATION FRAMEWORK:
 
-    This is an API automation test framework that configured with various tech stacks and configurations. BDD test approach has been implemented using Cucumber. 
+    This is an API automation test framework that configured with various tech stacks and configurations. BDD test approach has been implemented using Cucumber with Playwright and TypeScript.
     
     
     Highlights of the framework:
@@ -12,9 +12,11 @@ OVERVIEW ABOUT THE AUTOMATION FRAMEWORK:
         4. Cucumber HTML reporter will be generated for each test run
         5. Framework implemented with global config to enable it to use it for different environment
         6. TAG strategy used to segregate the test run based on the requriements
-        7. Utilised Lint to check the code quality
+        7. Utilised eslint to check the code quality
         8. Test run configured through bash file and it can be configured in CI CD to run
         9. Cucumber.JS runner has been configured to customise the test runner
+        10. Schema validation performed with other validation points
+        11. Reusable REST helper function for API calls and assertions
 
 
 
@@ -29,7 +31,7 @@ OVERVIEW ABOUT THE AUTOMATION FRAMEWORK:
 
 3. To RUN THE TESTS
 
-    ./run_tests.sh dev        #-----> dev is a tag used in the feature file (dev, smoke and regression tags are set)
+    ./run_tests.sh dev        #-----> dev is a tag used in the feature file under src/features(dev, smoke and regression tags are set)
 
 4. TO VIEW THE REPORT
 
