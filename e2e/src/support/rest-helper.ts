@@ -1,6 +1,7 @@
 import { APIRequestContext, APIResponse} from "playwright"
 import { GlobalConfig, GlobalAPIResponseVariables} from "../env/global";
 import {retrieveHostURL} from "./host-helper";
+import Ajv from "ajv";
 
 export const getResponse = async (
     request: APIRequestContext,
@@ -42,4 +43,19 @@ export const getResponseWithQueryParams = async (
     globalAPIResponseVariables.response = response
 
     return response
+}
+
+
+export const validateSchema = async (
+    schema: any,
+    response: JSON
+): Promise<Boolean> => {
+
+    const ajv = new Ajv();
+    
+    const validate = ajv.compile(schema);
+
+    const isValid = validate(response);
+
+    return isValid
 }

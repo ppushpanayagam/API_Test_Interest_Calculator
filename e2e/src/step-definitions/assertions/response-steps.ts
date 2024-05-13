@@ -1,6 +1,8 @@
 import { Then } from "@cucumber/cucumber"
 import { ScenarioWorld } from "../setup/world";
 import { expect } from "@playwright/test"
+import schema from "../../utils/responseSchema.json";
+import { validateSchema } from "../../support/rest-helper";
 
 Then(
     /^the response was (successful)?(unsuccessful)?$/,
@@ -32,6 +34,24 @@ Then(
         const response = globalAPIResponseVariables.response
 
         expect(response.status()).toBe(Number(statusCode))
+        
+    }
+)
+
+Then(
+    /^the api should return interest rate as "([^"]*)"$/,
+    async function(this: ScenarioWorld, expectedInterestRate: string) {
+        const {
+            globalAPIResponseVariables
+        } = this
+
+        const response = globalAPIResponseVariables.response
+        const responseBody = await response.json()
+
+        expect(await responseBody.interestAccrued).toBe(Number(expectedInterestRate))
+
+        const schemaValidationResult = await validateSchema(schema, responseBody);
+        expect(schemaValidationResult).toBeTruthy()
 
     }
 )

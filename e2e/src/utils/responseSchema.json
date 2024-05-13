@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+      "startingAmount": {
+        "type": "number"
+      },
+      "interestAccrued": {
+        "type": "number"
+      },
+      "finalBalance": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "startingAmount",
+      "interestAccrued",
+      "finalBalance"
+    ]
+  }

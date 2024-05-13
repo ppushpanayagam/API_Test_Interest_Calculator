@@ -9,7 +9,7 @@
     "transpile": "rimraf dist && babel --extensions .ts --out-dir dist src",
     "precucumber": "rimraf reports && mkdir reports && echo {} > reports/report.json",
     "cucumber": "npm run transpile && cucumber-js",
-    "postcucumber" : "ts-node ./src/reporter/cucumber-report.ts"
+    "postcucumber": "ts-node ./src/reporter/cucumber-report.ts"
   },
   "keywords": [],
   "author": "Pushparaj Pushpanayagam",
@@ -23,6 +23,7 @@
     "@playwright/test": "^1.44.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
+    "ajv": "^8.13.0",
     "cucumber-html-reporter": "^7.1.1",
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
