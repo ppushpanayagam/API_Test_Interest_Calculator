@@ -12,6 +12,8 @@ Feature: Interest Calculator
         | 1000    | 5        | 3        | SIMPLE      |     150.00       |
         | 1000    | 5        | 3        | COMPOUND    |     187.63       |
 
+
+
   @dev
   Scenario Outline: Failed to calculate interest with invalid data
     Given I set "<amount>" "<interest>" "<duration>" to calculate "<accrualType>" interest
@@ -28,3 +30,10 @@ Feature: Interest Calculator
         |   -1000  |    -5     |    -3     | COMPOUND    |
         |   -1000  |    5      |     3     | SIMPLE      |
         |   -1000  |    5      |     3     | COMPOUND    |
+        |    1000  |    5      |     0     | SIMPLE      |
+        |    1000  |    5      |     0     | COMPOUND    |
+        |    1000  |    0      |     3     | SIMPLE      |
+        |    1000  |    0      |     3     | COMPOUND    |
+        |    0     |    5      |     3     | SIMPLE      |
+        |    0     |    5      |     3     | COMPOUND    |
+        
