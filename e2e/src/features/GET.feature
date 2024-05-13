@@ -11,6 +11,8 @@ Feature: Interest Calculator
         | amount  | interest | duration | accrualType | expectedInterest |
         | 1000    | 5        | 3        | SIMPLE      |     150.00       |
         | 1000    | 5        | 3        | COMPOUND    |     187.63       |
+        | 1       | 1        | 1        | SIMPLE      |     0.01         |
+        #| 1       | 1        | 1        | COMPOUND    |     0.01         | ---> BUG 
 
 
 
@@ -36,4 +38,6 @@ Feature: Interest Calculator
         |    1000  |    0      |     3     | COMPOUND    |
         |    0     |    5      |     3     | SIMPLE      |
         |    0     |    5      |     3     | COMPOUND    |
+        |    1000  |    5      |     3     | simple      |
+        |    1000  |    5      |     3     | compound    |
         
